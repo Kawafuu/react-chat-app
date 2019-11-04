@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Channels from './Components/Channels';
+import Chat from './Components/Chat';
+import Store from './store';
+import Form from './Components/Form'
+import Auth from './Components/Auth'
+import Header from './Components/Header';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+
+return (
+  
+    <div>
+      
+      <Store> {/* main context */}
+      <Auth> {/* basic auth/welcome component */}
+      <Header/>
+      <div className="main-wrapper">
+      <Channels />
+      <Chat  /> {/* component rendering msg's */}
+      </div>
+      <Form/> {/* msg input component */}
+        </Auth>
+      </Store>
     </div>
+    
   );
 }
 
